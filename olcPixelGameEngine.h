@@ -6186,7 +6186,7 @@ namespace olc {
 					default:
 						break;
 				}
-				std::cout << "PRESSED: " << (int)key << "\n";
+				std::cout << "PRESSED ASCII: " << (int)key << "\n";
 				ptrPGE->olc_UpdateKeyState(mapKeys[key], false);
 			});
 
@@ -6199,7 +6199,7 @@ namespace olc {
 			// Handle KeyRelease of the "special" codes
 			glutSpecialUpFunc([](int key, int x, int y) -> void
 			{
-				std::cout << "PRESSED: " << (int)key << "\n";
+				std::cout << "PRESSED SPECIAL: " << (int)key << "\n";
 				ptrPGE->olc_UpdateKeyState(mapKeys[key | specialFlag], false);
 			});
 
