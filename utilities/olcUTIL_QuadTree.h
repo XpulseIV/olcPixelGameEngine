@@ -212,6 +212,16 @@ namespace olc::utils
 			};
 		}
 
+		void Draw(olc::PixelGameEngine* pge)
+		{
+			for (int i = 0; i < 4; i++)
+			{
+				if (m_pChild[i])
+					m_pChild[i]->Draw(pge);
+			}
+
+			pge->DrawRect(m_rect.pos, m_rect.size);
+		}
 
 		const geom2d::rect<CTYPE>& area()
 		{
@@ -333,6 +343,11 @@ namespace olc::utils
 		{
 			m_allItems.clear();
 			root.clear();
+		}
+
+		void Draw(olc::PixelGameEngine* pge)
+		{
+			root.Draw(pge);
 		}
 
 		const geom2d::rect<CTYPE>& area()
